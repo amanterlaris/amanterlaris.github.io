@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eggsam</title>
+    <script>window.MathJax = { MathML: { extensions: ["mml3.js", "content-mathml.js"]}};</script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://eggsam.com/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="shortcut icon" href="https://eggsam.com/media/logo.svg">
+    <meta name="keywords" content="GATE, free mock test,sample paper, mechanical, engineering, 2019, IIT, IISc" />
+    <meta name="description" content="Free Mock Tests for GATE, SSC CGL. Maintained by IITians and IIScians." />
+    <meta property="og:image" content="https://eggsam.com/media/new_fb_cover.jpg" />
+    <meta property="og:url" content="https://eggsam.com" />
+    <meta property="og:title" content="Free Mock Tests for GATE, SSC CGL!" />
+    <meta property="og:description" content="Free Mock Tests for GATE, SSC CGL. Maintained by IITians and IIScians. Join today and get all quizzes for free!!" />
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-7084543779836106",
+        enable_page_level_ads: true
+      });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124186531-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-124186531-1');
+    </script>
+
+</head>
+<body style="background-color: #f8f8f8;">
+  <div class="overlay">
+        <script src="https://eggsam.com/sha256.min.js" type="text/javascript"></script>
+    <div id="login_popup" class="popup" onclick="">
+      <div style="text-align: right; font-size: x-large; cursor: pointer; margin-bottom: -40px;" onclick="hide_popup()">&times;</div>
+      <div style="font-size: 30px; margin-bottom: -15px;text-align: left;">Sign In</div>
+      <hr>
+      <table class="table table-borderless formtable" style="margin-bottom: 0px">
+        <tbody>
+          <tr>
+            <td>Email / Username</td>
+            <td><input type="text" class="soft-input" placeholder="email / username" id="loginemail"></td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td><input type="password" class="soft-input" placeholder="password" id="loginpass"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="font-size: small; padding: 0px;"><a href="/password/email">Forgot Password</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="btn form-btn" onclick="trylogin()" id="login-btn">Sign In</button>
+    </div>
+    <div id="signup_popup" class="popup">
+      <div style="text-align: right; font-size: x-large; cursor: pointer; margin-bottom: -40px;" onclick="hide_popup()">&times;</div>
+      <div style="font-size: 30px; margin-bottom: -15px;text-align: left;">Register</div>
+      <hr>
+      <div id="contents">
+        <div id="messages" style="font-size: small; text-align: left; color: red;"></div>
+        <table class="table table-borderless formtable" style="margin-bottom: 0px">
+          <tbody>
+            <tr>
+              <td>Username</td>
+              <td><input type="text" class="soft-input" placeholder="username" id="signupuser"></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><input type="text" class="soft-input" placeholder="email" id="signupemail"></td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td><input type="password" class="soft-input" placeholder="password" id="signuppass1"></td>
+            </tr>
+            <tr>
+              <td>Password again</td>
+              <td><input type="password" class="soft-input" placeholder="password" id="signuppass2"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="font-size: small; margin-bottom: 3px;margin-top: 3px;">
+          By signing up, you agree to our <a href="https://eggsam.com/docs/terms_conditions.html" style="font-weight: bold" target="_blank">terms and conditions</a>.
+        </div>
+        <button class="btn form-btn" onclick="trysignup()" id="register-btn">Register</button>
+      </div>
+    </div>
+      </div>
+    <nav class="navbar navbar-expand-sm navbar-light navbar-custom" style="font-size: 14px; /*font-family: 'OpenSans-Semibold';*/">
+      <a class="navbar-brand" href="/"><img src="https://eggsam.com/media/logo.svg" height="30px" style="padding: 5px;padding-top: 0px;margin-right: 5px;"><strong>Eggsam</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapsibleNavbar">
+        <span class="navbar-toggler-icon" style="color: black;"></span>
+      </button>
+
+    <div class="collapse navbar-collapse collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item hide">
+                <a class="nav-link" href="#"><img src="https://eggsam.com/media/home/categories.svg" style="height: 14px;margin: 2px;margin-top: 0px;margin-right: 3px;">Categories</a>
+            </li>
+            <li class="hide">
+                <form style="padding: 5px">
+                   <input type="text" placeholder="Search"  style="padding: 3px;background-color: #e7e7e7;border: none;border-radius: 3px;">
+                   <div style="display: inline-block;margin-left: -29px;margin-right: 11px;">
+                     &#x1f50d;
+                   </div>
+               </form>
+            </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse  justify-content-end collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item hide">
+                <a class="nav-link" href="https://eggsam.com/home/dashboard">Quizzes</a>
+            </li>
+            <li class="nav-item hide">
+                <a class="nav-link" href="#">Discussion</a>
+            </li>
+            <li class="nav-item hide">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+                        <li class="nav-item" onclick="login_popup()">
+                <a class="nav-link" href="#" style="border: solid 1px #132A42;padding: 1px;margin: 5px;padding-left: 18px;padding-right: 18px;border-radius: 4px;margin-top: 6px;">Login</a>
+            </li>
+            <li class="nav-item" onclick="signup_popup()">
+                <a class="nav-link" href="#" style="color: white;padding: 2px;margin: 5px;padding-left: 18px;padding-right: 18px;border-radius: 4px;margin-top: 6px;background-color: #132A42;border: none;">Signup</a>
+            </li>
+            <script type="text/javascript">
+              function signup_popup(){
+                if ((/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))){
+                  window.open('https://eggsam.com/auth/register', '_self');
+                }
+                $('#login_popup').hide();
+                $('#signup_popup').show();
+                $('.overlay').fadeIn();
+              }
+              function login_popup(){
+                $('#signup_popup').hide();
+                $('#login_popup').show();
+                $('.overlay').fadeIn();
+              }
+              function hide_popup(){
+                $('.overlay').fadeOut();
+              }
+              function trylogin(){
+                $('#login-btn').addClass('progress-bar-striped progress-bar-animated');
+                var xhr = $.post( "https://eggsam.com/auth/asynclogin", { email: $('#loginemail').val(), password: sha256($('#loginpass').val()) })
+                xhr.done(function( data ) {
+                  window.open('/home', '_self');
+                });
+                xhr.fail(function( data ) {
+                  $('#login-btn').removeClass('progress-bar-striped progress-bar-animated');
+                  if (data.status == 400 || data.status == 401){
+                    alert(data.responseText);
+                }
+                else{
+                  alert("Unexpected error occurred")
+                }
+                });
+              }
+              function trysignup(){
+                var pass1 = $('#signuppass1').val();
+                var pass2 = $('#signuppass2').val();
+                if (pass2 !== pass1){
+                  alert('passwords do not match');
+                }
+                $('#register-btn').addClass('progress-bar-striped progress-bar-animated');
+                var xhr = $.post( "https://eggsam.com/auth/asyncsignup", {name : $('#signupuser').val(), password: sha256(pass1), email: $('#signupemail').val(), password_confirmation: sha256(pass2) })
+                xhr.done(function( data ) {
+                  $('#signup_popup').html(data)
+                });
+                xhr.fail(function( data ) {
+                  $('#register-btn').removeClass('progress-bar-striped progress-bar-animated');
+                  if (data.status == 400 || data.status == 401){
+                    $('#messages').html(data.responseText);
+                  }
+                  else{
+                    alert("Unexpected error occurred");
+                  }
+                });
+              }
+              
+            </script>
+                    </ul>
+    </div>
+    </nav>
+    <div style="min-height: 75vh;">
+    
+<div class="container-fluid" style="/*font-family: 'OpenSans-Light';*/">
+  <div class="row">
+      <div class="col-md-6">
+        <div style="margin-top: 70px; margin-left: 40px; font-size: 35px;">Crack the exam<br>with Eggsam</div>
+        <div style="margin-top: 1px; margin-left: 40px; font-size: 15px;">Cracking exams never get simpler</div>
+        <button class="btn btn-success sample-test-btn" onclick="window.open('https://eggsam.com/home/dashboard', '_self')">Take a test</button>
+      </div>
+      <div class="col-md-6 d-none d-md-block"><img src="https://eggsam.com/media/home/book_worm.svg" class="mx-auto d-block" height="270px" style="margin-top: 50px; margin-bottom: 50px;"></div>
+      <div class="carpet d-none d-md-block"></div>
+  </div>
+  <div class="row" style="background-color: #132A42; color: white; font-family: 'Open Sans'; font-size: 14px;">
+      <div class="col-sm-6" style="padding: 8px; text-align: center;">1000+<br>Students Registered</div>
+      <div class="col-sm-6" style="padding: 8px; text-align: center;">50+<br>Exams</div>
+      <div class="col-sm-4 hide" style="padding: 8px; text-align: center;">9+<br>Exam Categories</div>
+  </div>
+  <div class="row" style="text-align: center; padding: 10px; font-size: 2rem;">
+      <div style="width: 100%; padding-top: 15px">Exam Categories</div>
+  </div>
+  <div class="row" style="padding-left: 10%; padding-right: 10%; text-align: center;">
+      <div class="exam-cat-card">
+        <div class="card-icon">
+            <img src="https://eggsam.com/media/home/engineering.svg">
+        </div>
+        <div class="exam-cat-title">Mechanical Engineering</div>
+        <div class="exam-cat-exam">GATE</div>
+        <div class="exam-cat-exam">IES</div>
+      </div>
+      <div class="exam-cat-card">
+        <div class="card-icon">
+            <img src="https://eggsam.com/media/home/government.svg">
+        </div>
+        <div class="exam-cat-title">Government</div>
+        <div class="exam-cat-exam">SSC</div>
+      </div>
+      <!-- <div class="col-md-2" style="background-color: #edecec; height: 230px; margin: 20px; border-radius: 8px;"><div style="width: 190px;"></div></div> -->
+  </div>
+  <div class="row" style="background-color: #F2F2F6;">
+      <div class="col-sm-12">
+          <div style="text-align: center; font-size: 2rem; margin-top: 30px;">Features</div>
+      </div>
+      <div class="col-md-6">
+        <div class="features">
+          <div class="d-flex align-items-start p-2">
+            <div class="p-1"><div style="width: 8px; height: 32px;border-radius: 4px; background-color: #FBAE3A;"></div></div>
+            <div class="p-1" style="font-size: small;">Every question, every solution, meticulously created by our team of toppers and experts, based on the latest exam patterns. Mock tests designed to resemble the actual test closely.</div>
+          </div>
+          <ul>
+            <!-- <li>Make your own list of Questions</li>
+            <li>Daily dose of Current Affairs</li>
+            <li>Random Question Paper Generator</li> -->
+            <li>Attempt quizzes on various topics</li>
+            <li>Analyze and compare your performance with others</li>
+            <li>Reminders and notifications about important dates</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 d-none d-md-block" style="padding: 80px; padding-top: 40px; padding-bottom: 40px"><img src="https://eggsam.com/media/home/sample_quiz.svg"></div>
+  </div>
+  <div class="row hide">
+    <div class="col-sm-12">
+      <div style="text-align: center; font-size: 2rem; margin-top: 30px;">Testimonies</div>
+    </div>
+  </div>
+  <div class="row hide" style="margin-top: 30px;">
+    <div class="col-md-3 d-none d-md-block" style="text-align: right;"><img src="https://eggsam.com/media/home/quote_open.svg" style="width: 60%; margin-top: 80px;"></div>
+    <div class="col-md-6" style="text-align: center">
+      <div class="testimony_img">
+        <img src="https://eggsam.com/media/home/goat_face.jpg" class="rounded-circle" style="width: 100%">
+      </div>
+      <br>
+      <div style="color: black; font-weight: 600; font-size: 0.9em; width: 70%; display: inline-block;">
+        <div>Missie the goat</div>
+        <div>AIR 254</div>
+        <div style="font-size: 0.85em; font-weight: 400;margin-top: 10px">Concise and exhaustive, Eggsam made it easy for me. Recommended for all preparing for GATE.</div>
+      </div>
+    </div>
+    <div class="col-md-3 d-none d-md-block"><img src="https://eggsam.com/media/home/quote_close.svg"  style="width: 60%; margin-top: 80px;"></div>
+  </div>
+  <!-- <div class="row" style="/*background-color: #F2F2F6; margin-top: 40px;*/">
+    <div class="col-md-6 footer-contents">
+      <a href="https://eggsam.com"><div class="footer-brand">Eggsam</div></a>
+      <div class="footer-nav">Home</div>
+      <div class="footer-nav hide">Discussions</div>
+      <div class="footer-nav hide">Blog</div>
+    </div>
+    <div class="col-md-6 footer-contents" style="text-align: right;">
+      <div class="footer-nav social"><a href="#"><img src="https://eggsam.com/media/home/gp.svg" style="width:75%"></a></div>
+      <div class="footer-nav social"><a href="#"><img src="https://eggsam.com/media/home/fb.svg" style="width:75%"></a></div>
+    </div>
+    <div style="display: block; width: 100%; text-align: center; font-size: 0.9em"><a href="https://eggsam.com/docs/terms_conditions.html" target="_blank">Terms and Conditions</a> &nbsp;&nbsp;&nbsp; Contact Us</div>
+    <div style="display: block; width: 100%; text-align: center; font-size: 0.9em">&copy; Eggsam</div>
+  </div> -->
+</div>
+
+    </div>
+    <div class="container-fluid">
+      <div class="row" style="background-color: #F2F2F6; margin-top: 10px;">
+        <div class="col-md-6 footer-contents">
+          <a href="https://eggsam.com"><div class="footer-brand">Eggsam</div></a>
+          <a href="https://eggsam.com"><div class="footer-nav">Home</div></a>
+          <!-- <div class="footer-nav hide">Discussions</div> -->
+          <!-- <div class="footer-nav hide">Blog</div> -->
+        </div>
+        <div class="col-md-6 footer-contents" style="text-align: right;">
+          <div class="footer-nav social"><a href="#"><img src="https://eggsam.com/media/home/gp.svg" style="width:75%"></a></div>
+          <div class="footer-nav social"><a href="https://www.facebook.com/gate19mech/"><img src="https://eggsam.com/media/home/fb.svg" style="width:75%"></a></div>
+        </div>
+        <div style="display: block; width: 100%; text-align: center; font-size: 0.9em"><a href="https://eggsam.com/docs/terms_conditions.html" target="_blank">Terms and Conditions</a> &nbsp;&nbsp;&nbsp; <a href="https://eggsam.com/home/about">About Us</a></div>
+        <div style="display: block; width: 100%; text-align: center; font-size: 0.9em">&copy; Eggsam</div>
+      </div>
+    </div>
+</body>
+<script type="text/javascript">
+  $('.btn').click(function(){
+    $(this).addClass('progress-bar-striped progress-bar-animated');
+  });
+</script>
+</html>
